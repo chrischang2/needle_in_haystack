@@ -1,13 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0m1n0mainscene"]
+[gd_scene format=3 uid="uid://bwqibwut4btik"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://81ghi5q25yrn" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" uid="uid://cstrawbale01" path="res://scenes/straw_bale.tscn" id="2_straw_bale"]
+[ext_resource type="Script" uid="uid://bm7k3p2ki1q0b" path="res://scripts/free_look_camera.gd" id="3_free_look"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node3D" unique_id=864433283]
 script = ExtResource("1_main")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 400.0
-offset_bottom = 80.0
-text = "Needle in Haystack"
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1870781681]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3, 5)
+current = true
+script = ExtResource("3_free_look")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1265089496]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 4, 0)
+
+[node name="StrawBale" parent="." unique_id=1692054732 instance=ExtResource("2_straw_bale")]

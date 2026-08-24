@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cstrawbale01"]
+
+[ext_resource type="Script" path="res://scripts/straw_bale.gd" id="1_script"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_straw"]
+top_radius = 0.015
+bottom_radius = 0.02
+height = 1.0
+radial_segments = 5
+rings = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_straw"]
+albedo_color = Color(0.85, 0.68, 0.28, 1)
+roughness = 1.0
+
+[node name="StrawBale" type="MultiMeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_straw")
+script = ExtResource("1_script")
+straw_mesh = SubResource("CylinderMesh_straw")
+straw_count = 1000000
+bale_radius = 2.0
+bale_height = 1.2

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dlxiv0nlxsb7q"]
+
+[ext_resource type="Script" uid="uid://d1a86ku3tkoc5" path="res://scripts/haystack_bale.gd" id="1_script"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lousi"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_straw"]
+albedo_color = Color(0.85, 0.68, 0.28, 1)
+
+[node name="HaystackBale" type="Node3D" unique_id=1517402748]
+script = ExtResource("1_script")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1694555306]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+mesh = SubResource("CylinderMesh_lousi")
+surface_material_override/0 = SubResource("StandardMaterial3D_straw")
